@@ -1,11 +1,12 @@
-# Crocante Landing Page
+# Crocante LAT — Stealth Landing
 
-Landing page en modo "stealth" para crocante.lat
+Landing experimental para crocante.lat en modo stealth.
 
 ## 🚀 Stack
 
 - HTML5
 - CSS3 (Pure CSS, no frameworks)
+- Vanilla JavaScript (minimal)
 - Vercel (Deployment)
 
 ## 📦 Estructura
@@ -13,19 +14,38 @@ Landing page en modo "stealth" para crocante.lat
 ```
 landing/
 ├── index.html      # Página principal
-├── styles.css      # Estilos
+├── style.css       # Estilos globales
 ├── vercel.json     # Configuración de Vercel
+├── assets/
+│   ├── background.jpg              # Imagen fallback difuminada
+│   └── sora2-datcos-latam.mp4      # Video generado con Sora 2
 └── README.md       # Este archivo
 ```
 
-## 🛠️ Deploy
+## 💻 Correr localmente
 
-### En Vercel
-1. Conectar repositorio desde GitHub
-2. Deploy automático
-3. Configurar dominio personalizado: crocante.lat
+1. Clona el repo
+2. Abre la carpeta en Cursor
+3. Abre `index.html` directamente en el navegador o usa Live Server
+4. O ejecuta: `open index.html`
+
+## 🎨 Características
+
+- **Video de fondo** con fallback a imagen estática (o gradiente temporal)
+- **Animación de terminal** con mensajes de "access protocol"
+- **Botón de Request Access** (configurable)
+- **100% responsive**
+- **Efecto stealth/misterio** con blur y animaciones sutiles
+
+## 🛠️ Deploy en Vercel
+
+1. Crea un repo GitHub `landing`
+2. Conecta el repo en [vercel.com](https://vercel.com)
+3. Sube los archivos y publica
+4. Asocia dominio: `crocante.lat`
 
 ### DNS en GoDaddy
+
 ```
 Type: CNAME
 Name: www
@@ -36,17 +56,11 @@ Name: @
 Value: 76.76.21.21
 ```
 
-## 📝 Notas
-
-- Diseño minimalista para generar misterio e impacto
-- Sin JavaScript (por ahora)
-- 100% responsive
-- Performance optimizado
-
 ## 🔄 Futuras Mejoras
 
-- Agregar logo cuando esté disponible
-- Integrar formulario de waitlist
+- Agregar video real de Sora 2 cuando esté disponible
+- Agregar imagen de fondo personalizada en `/assets`
+- Integrar formulario de waitlist funcional
 - Analytics
-- Secciones adicionales
+- Logo y branding completo
 
