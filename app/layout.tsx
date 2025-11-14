@@ -12,18 +12,33 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.crocante.lat"),
   title: "The DATCOs Access Layer",
   description: "Powering the On-Chain Shift Across Latin America",
+  keywords: ["DATCOs", "Crocante", "DeFi", "Latin America", "Blockchain"],
+  authors: [{ name: "Crocante" }],
+  creator: "Crocante",
+  publisher: "Crocante",
   openGraph: {
     title: "The DATCOs Access Layer",
     description: "Powering the On-Chain Shift Across Latin America",
-    type: "website",
+    url: "https://www.crocante.lat",
     siteName: "Crocante",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "The DATCOs Access Layer",
     description: "Powering the On-Chain Shift Across Latin America",
+    creator: "@crocante",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.crocante.lat",
   },
 }
 
