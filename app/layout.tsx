@@ -1,21 +1,18 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
-import { Instrument_Serif } from "next/font/google"
-import { Suspense } from "react"
+import { Space_Grotesk } from 'next/font/google'
+import { ErrorBoundary } from "@/components/error-boundary"
 import "./globals.css"
 
-const instrumentSerif = Instrument_Serif({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-instrument-serif",
-  weight: "400",
+  variable: "--font-space-grotesk",
 })
 
 export const metadata: Metadata = {
-  title: "Crocante",
+  title: "v0 App",
   description: "Created with v0",
   generator: "v0.app",
 }
@@ -26,21 +23,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} antialiased`}>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('error', (e) => {
-                if (e.message === 'ResizeObserver loop completed with undelivered notifications.') {
-                  e.stopImmediatePropagation();
-                }
-              });
-            `,
-          }}
-        />
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+    <html lang="en" className={`${spaceGrotesk.variable} antialiased`}>
+      <body className="font-sans overflow-x-hidden">
+        <ErrorBoundary>
+          {children}
+          <Analytics />
+        </ErrorBoundary>
       </body>
     </html>
   )

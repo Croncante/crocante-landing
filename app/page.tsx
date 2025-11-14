@@ -1,33 +1,73 @@
-import { GradientBackground } from "@/components/gradient-background"
-import { Instrument_Serif } from "next/font/google"
+"use client"
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-})
+import { GradientBackground } from "@/components/gradient-background"
+import { AnimatedText } from "@/components/animated-text"
+import { useFitText } from "@/hooks/use-fit-text"
+import Image from "next/image"
 
 export default function Page() {
-  return (
-    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black/50">
-      <GradientBackground />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/70 via-black/20 to-black/90" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-emerald-950/10 to-transparent" />
+  const h1Texts = ["The DATCOs Access Layer", "La Capa de Acceso DATCOs", "A Camada de Acesso DATCOs"]
 
-      <section className="px-6 max-w-5xl mx-auto">
-        <h1
-          className={`${instrumentSerif.className} text-foreground text-center text-balance tracking-tight text-6xl md:text-7xl lg:text-8xl font-normal mb-6`}
-        >
-          The DATCOs Access in LatAm
-        </h1>
-        <h3
-          className={`${instrumentSerif.className} text-muted-foreground text-center text-balance font-normal tracking-tight italic text-xl md:text-2xl lg:text-3xl mb-12`}
-        >
-          You are not buying crypto, you are selling fiat.
-        </h3>
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-          <p className="text-sm text-muted-foreground tracking-wider uppercase">Secure • Transparent • Innovative</p>
+  const h3Texts = [
+    "Powering the On-Chain Shift Across Latin America",
+    "Impulsando el Cambio On-Chain en América Latina",
+    "Impulsionando a Mudança On-Chain na América Latina",
+  ]
+
+  const pTexts = [
+    "Secure • Transparent • Capital Efficient",
+    "Seguro • Transparente • Eficiente",
+    "Seguro • Transparente • Eficiente",
+  ]
+
+  const { elementRef: h1Ref } = useFitText(80)
+  const { elementRef: h3Ref } = useFitText(32)
+  const { elementRef: pRef } = useFitText(16)
+
+  return (
+    <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#7C62CC]">
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20">
+        <Image
+          src="/logotype.svg"
+          alt="Acro Create"
+          width={120}
+          height={22}
+          className="h-auto w-24 sm:w-32 md:w-36 lg:w-48"
+        />
+      </div>
+
+      <div className="absolute inset-0 z-[2]">
+        <GradientBackground />
+      </div>
+      <div className="absolute inset-0 z-[3] bg-gradient-to-br from-[#A383D6]/10 via-transparent to-[#C4C4ED]/12" />
+      <div className="absolute inset-0 z-[3] bg-gradient-to-tr from-[#C4C4ED]/10 via-transparent to-[#A383D6]/8" />
+
+      <section className="relative z-20 w-full max-w-full mx-auto px-4 sm:px-6 md:px-8">
+        <div className="w-full max-w-full overflow-visible text-center mb-6">
+          <h1 
+            ref={h1Ref}
+            className="font-sans text-white tracking-tight font-normal leading-[1.1]"
+          >
+            <AnimatedText texts={h1Texts} syncKey="main" />
+          </h1>
+        </div>
+        
+        <div className="w-full max-w-full overflow-visible text-center mb-12">
+          <h3 
+            ref={h3Ref}
+            className="font-sans font-normal tracking-tight italic text-secondary"
+          >
+            <AnimatedText texts={h3Texts} syncKey="main" />
+          </h3>
+        </div>
+        
+        <div className="w-full max-w-full overflow-visible text-center mb-8">
+          <p 
+            ref={pRef}
+            className="text-white/80 tracking-wider uppercase"
+          >
+            <AnimatedText texts={pTexts} showPulse syncKey="main" />
+          </p>
         </div>
       </section>
     </main>
