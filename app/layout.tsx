@@ -12,9 +12,19 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "The DATCOs Access Layer",
+  description: "Powering the On-Chain Shift Across Latin America",
+  openGraph: {
+    title: "The DATCOs Access Layer",
+    description: "Powering the On-Chain Shift Across Latin America",
+    type: "website",
+    siteName: "Crocante",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The DATCOs Access Layer",
+    description: "Powering the On-Chain Shift Across Latin America",
+  },
 }
 
 export default function RootLayout({
