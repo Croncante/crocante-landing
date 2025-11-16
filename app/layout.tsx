@@ -12,51 +12,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.crocante.lat"),
-  title: {
-    default: "The DATCOs Access Layer",
-    template: "%s | Crocante",
-  },
-  description: "Powering the On-Chain Shift Across Latin America",
-  keywords: ["DATCOs", "Crocante", "DeFi", "Latin America", "Blockchain"],
-  authors: [{ name: "Crocante" }],
-  creator: "Crocante",
-  publisher: "Crocante",
-  applicationName: "Crocante",
-  openGraph: {
-    title: "The DATCOs Access Layer",
-    description: "Powering the On-Chain Shift Across Latin America",
-    url: "https://www.crocante.lat",
-    siteName: "Crocante",
-    locale: "en_US",
-    type: "website",
-    alternateLocale: ["es_ES", "pt_BR"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "The DATCOs Access Layer",
-    description: "Powering the On-Chain Shift Across Latin America",
-    creator: "@crocante",
-    site: "@crocante",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://www.crocante.lat",
-  },
-  other: {
-    "og:title": "The DATCOs Access Layer",
-    "og:description": "Powering the On-Chain Shift Across Latin America",
-  },
+  title: "v0 App",
+  description: "Created with v0",
+  generator: "v0.app",
 }
 
 export default function RootLayout({
