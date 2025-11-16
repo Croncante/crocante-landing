@@ -3,9 +3,14 @@
 import { GradientBackground } from "@/components/gradient-background"
 import { AnimatedText } from "@/components/animated-text"
 import { useFitText } from "@/hooks/use-fit-text"
+import { LoginPanel } from "@/components/login-panel"
 import Image from "next/image"
+import { useState, useRef } from "react"
 
 export default function Page() {
+  const [isLoginOpen, setIsLoginOpen] = useState(false)
+  const loginButtonRef = useRef<HTMLButtonElement>(null)
+
   const h1Texts = ["The DATCOs Access Layer", "La Capa de Acceso DATCOs", "A Camada de Acesso DATCOs"]
 
   const h3Texts = [
@@ -26,6 +31,23 @@ export default function Page() {
 
   return (
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#7C62CC]">
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 lg:top-8 lg:right-8 z-20">
+        <button
+          ref={loginButtonRef}
+          onClick={() => setIsLoginOpen(!isLoginOpen)}
+          className="text-xs sm:text-sm text-white/90 hover:text-white underline underline-offset-4 transition-colors"
+          aria-controls="investor-login-panel"
+          aria-expanded={isLoginOpen}
+        >
+          Login
+        </button>
+        <LoginPanel
+          isOpen={isLoginOpen}
+          onClose={() => setIsLoginOpen(false)}
+          buttonRef={loginButtonRef}
+        />
+      </div>
+
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20">
         <Image
           src="/logotype.svg"
