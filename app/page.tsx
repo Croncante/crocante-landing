@@ -41,11 +41,7 @@ export default function Page() {
         >
           Login
         </button>
-        <LoginPanel
-          isOpen={isLoginOpen}
-          onClose={() => setIsLoginOpen(false)}
-          buttonRef={loginButtonRef}
-        />
+        <LoginPanel isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} buttonRef={loginButtonRef} />
       </div>
 
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-8 z-20">
@@ -66,32 +62,32 @@ export default function Page() {
 
       <section className="relative z-20 w-full max-w-full mx-auto px-4 sm:px-6 md:px-8">
         <div className="w-full max-w-full overflow-visible text-center mb-6">
-          <h1 
-            ref={h1Ref}
-            className="font-sans text-white tracking-tight font-normal leading-[1.1]"
-          >
+          <h1 ref={h1Ref} className="font-sans text-white tracking-tight font-normal leading-[1.1]">
             <AnimatedText texts={h1Texts} syncKey="main" />
           </h1>
         </div>
-        
+
         <div className="w-full max-w-full overflow-visible text-center mb-12">
-          <h3 
-            ref={h3Ref}
-            className="font-sans font-normal tracking-tight italic text-secondary"
-          >
+          <h3 ref={h3Ref} className="font-sans font-normal tracking-tight italic text-secondary">
             <AnimatedText texts={h3Texts} syncKey="main" />
           </h3>
         </div>
-        
+
         <div className="w-full max-w-full overflow-visible text-center mb-8">
-          <p 
-            ref={pRef}
-            className="text-white/80 tracking-wider uppercase"
-          >
+          <p ref={pRef} className="text-white/80 tracking-wider uppercase">
             <AnimatedText texts={pTexts} showPulse syncKey="main" />
           </p>
         </div>
       </section>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 sm:bottom-6 lg:bottom-8 z-20">
+        <a
+          href="mailto:contacto@crocante.lat"
+          className="text-xs sm:text-sm text-white/90 hover:text-white underline underline-offset-4 transition-colors"
+        >
+          Contact us
+        </a>
+      </div>
     </main>
   )
 }
