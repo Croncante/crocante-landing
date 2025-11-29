@@ -12,9 +12,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  title: "Crocante - The DATCOs Access Layer",
+  description: "Powering the On-Chain Shift Across Latin America. Secure, Transparent, Capital Efficient.",
+  generator: "Next.js",
 }
 
 export default function RootLayout({
